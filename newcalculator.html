@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+	<script type="text/javascript" src="newcalculator.js" ></script>
+	<link rel="stylesheet" type="text/css" href="newcalculator.css">
+</head>
+<body>
+<div class="container">
+	<div class="result">
+		<input class="text1" type="text" name="result1" id="result1" readonly="readonly" >
+	</div>
+	<div class="result">
+		<input class="text" type="text" name="result" id="result" readonly="readonly" >
+	</div>
+	<div class="floor1" >
+		<div class="f1">
+			<input class="num" type="button" value="7" name="7" id="7" onclick="seven()">
+			<input class="num" type="button" value="8" name="8" id="8" onclick="eight()">
+			<input class="num" type="button" value="9" name="9" id="9" onclick="nine()">
+			<input class="num" type="button" value="+" name="+" id="+" onclick="plus()">
+		</div>
+	</div>
+	<div class="floor2" >
+		<div class="f2">
+			<input class="num" type="button" value="4" name="4" id="4" onclick="four()">
+			<input class="num" type="button" value="5" name="5" id="5" onclick="five()">
+			<input class="num" type="button" value="6" name="6" id="6" onclick="six()">
+			<input class="num" type="button" value="-" name="-" id="-" onclick="minus()">
+		</div>
+	</div>
+	<div class="floor3" >
+		<div class="f3">
+			<input class="num" type="button" value="1" name="1" id="1" onclick="one()">
+			<input class="num" type="button" value="2" name="2" id="2" onclick="two()">
+			<input class="num" type="button" value="3" name="3" id="3" onclick="three()">
+			<input class="num" type="button" value="×" name="×" id="×" onclick="multiply()">
+		</div>
+	</div>
+	<div class="floor4">
+		<div class="f4">			
+			<input class="num" type="button" value="0" name="0" id="0" onclick="zero()">
+			<input class="num" type="button" value="." name="." id="." onclick="dotdot()">
+			<input class="num" type="button" value="Ans" name="Ans" id="Ans" onclick="ans()">
+			<input class="num" type="button" value="÷" name="÷" id="÷" onclick="division()">
+		</div>
+	</div>
+	<div class="floor5">
+		<div class="f4">			
+			<input class="sum" type="button" value="Sum for fun" name="sum" id="sum" onclick="sum()">
+			<input class="num" type="button" value="C" name="C" id="C" onclick="C()">
+			<input class="num" type="button" value="AC" name="AC" id="AC" onclick="AC()">
+			<input class="num" type="button" value="=" name="=" id="=" onclick="equal()">
+		</div>
+	</div>
+</div>
+</body>
+</html>
