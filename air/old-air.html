@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Air</title>
+	<script type="text/javascript">
+		var seats = [[true,true,true,true,true,true,],
+			[true,true,true,true,true,true,],
+			[true,true,true,true,true,true,],
+			[true,true,true,true,true,true,]];
+function begin() {
+	var position;
+	var seatid;
+	for (var i = 0; i < seats.length; i++) {
+		var rownum = seats[i].length;
+		for (var k = 0; k < rownum.length; k++) {
+			if (seats[i][k]) {
+				position = i * rownum + k;
+				seatid = "seat" + position;
+				document.getElementById(seatid).src="available.png";
+				document.getElementById(seatid).alt="Available seat";
+			}
+			else {
+				document.getElementById(seatid).src="selected.png";
+				document.getElementById(seatid).alt="Selected seat";
+			}
+		}
+	}
+}
+function select(s1) {
+	if (document.getElementById(s1).alt = "Available seat") {
+		document.getElementById(s1).src = "yourseat.png";
+		document.getElementById(s1).alt = "Your seat";
+	}
+	else if (document.getElementById(s1).alt == "Your seat") {
+		document.getElementById(s1).src = "unselected.png";
+		document.getElementById(s1).alt = "Available seat";
+	}
+}
+function submit() {
+	var srindex = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
+	var scindex = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,];
+	var a = 0;
+	var position;
+	var seatid;
+	totalrow = seats.length;
+	for (var i = 0; i < totalrow.length; i++) {
+		var rownum = seats[i].length;
+		for (var k = 0; k < rownum.length; k++) {
+			position = i * rownum + k;
+			seatid = "seat" + position;
+			if (document.getElementById(seatid).alt = "Your seat") {
+				srindex[a] = i;
+				scindex[a] = k;
+				a++;
+				console.log(seatid + ":R" + i + "C" + j);
+			}
+			else {continue;}
+		}
+	}
+	if (a = 0) {
+		alert("No seat has been selected! You need to select at least one seat!");
+	}
+	else {
+		var accept = comfirm ("You'll book " + a + " seats. Accept?");
+		if (accept) {
+			for (var j = 0; j < a; j++) {
+				i = srindex[j];
+				j = scindex[k];
+				position = i * seats[i].length + k;
+				seatid = "seat" + position;
+				console.log("seat" + position);
+				console.log("Row&Column Index:" + j);
+				console.log("srindex[" + j + "]:" + i);
+				console.log("scindex[" + j + "]:" + k);
+				document.getElementById(seatid).src = "selected.png";
+				document.getElementById(seatid).alt="Selected seat";
+			}
+			finished = true;
+		}
+	}
+}
+	</script>
+</head>
+<body onload="begin()">
+<div class="row">
+	<img id="seat0" onclick="select(id)"/>
+	<img id="seat1" onclick="select(id)"/>
+	<img id="seat2" onclick="select(id)"/>
+	<img id="path" src="pathway.png"/>
+	<img id="path" src="pathway.png"/>
+	<img id="seat3" onclick="select(id)"/>
+	<img id="seat4" onclick="select(id)"/>
+	<img id="seat5" onclick="select(id)"/>
+	<br/>
+	<img id="seat6" onclick="select(id)"/>
+	<img id="seat7" onclick="select(id)"/>
+	<img id="seat8" onclick="select(id)"/>
+	<img id="path" src="pathway.png"/>
+	<img id="path" src="pathway.png"/>
+	<img id="seat9" onclick="select(id)"/>
+	<img id="seat10" onclick="select(id)"/>
+	<img id="seat11" onclick="select(id)"/>
+	<br/>
+	<img id="seat12" onclick="select(id)"/>
+	<img id="seat13" onclick="select(id)"/>
+	<img id="seat14" onclick="select(id)"/>
+	<img id="path" src="pathway.png"/>
+	<img id="path" src="pathway.png"/>
+	<img id="seat15" onclick="select(id)"/>
+	<img id="seat16" onclick="select(id)"/>
+	<img id="seat17" onclick="select(id)"/>
+	<br/>
+	<img id="seat18" onclick="select(id)"/>
+	<img id="seat19" onclick="select(id)"/>
+	<img id="seat20" onclick="select(id)"/>
+	<img id="path" src="pathway.png"/>
+	<img id="path" src="pathway.png"/>
+	<img id="seat21" onclick="select(id)"/>
+	<img id="seat22" onclick="select(id)"/>
+	<img id="seat23" onclick="select(id)"/>
+	<br/>
+	<input type="button" id="findSeats" value="Submit" onclick="submit();">
+</div>
+</body>
+</html>
